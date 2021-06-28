@@ -5,7 +5,7 @@ const modal = document.getElementById("myModal");
 let promiseOfModal = new Promise(function (resolve) {
     window.setTimeout(function () {
         resolve(modal);
-    }, 1000 * 3);
+    }, 1000 * 60);
 });
 
 async function toAsync() {
@@ -27,11 +27,12 @@ function atAnimCompletion() {
     });
 }
 
-async function an() {
+async function showAlert() {
     await atAnimCompletion();
     alert("Continue to subscribe");
 }
-an();
+
+showAlert();
 
 modal.addEventListener("click", (e) => {
     switch (e.target.className) {
